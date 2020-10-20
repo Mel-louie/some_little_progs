@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # A little scipt to perform, to free space on my Mac
 # Adapt from free_space.sh in 42ToolBox https://github.com/alexandregv/42toolbox
 
