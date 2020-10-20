@@ -39,6 +39,3 @@ sudo du -s ~/Library/Caches/* | sort -h
 echo $'\033[0;34m'\\nSpace before:\\n$'\033[0;39m'"$initial_df"$'\033[0;34m'\\n\\nSpace after:$'\033[0;39m'
 df -h . | grep --color=always -E "Size|Used|Avail|Capacity|[0-9]*\.*[0-9]*Mi|[0-9]*\.*[0-9]*Gi|[0-9]+\.*[0-9]+% |$"
 
-final_used_space=$(df -h $HOME | grep -v 'Filesystem' | awk '{ printf("%f", $3) }')
-freed_space=$(printf "%.1f" $(echo "$initial_used_space - $final_used_space" | bc))
-echo $'\033[0;34m'\\nFreed\ space:$'\033[0;39m'\ ${freed_space}Gi
