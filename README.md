@@ -1,3 +1,7 @@
+# To Do
+
+A little programm to display a christmas tree in the terminal, in C
+
 # some_scripts :memo:
 Some useful scripts and little programms for my personal use
 
