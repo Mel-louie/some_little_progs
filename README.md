@@ -13,6 +13,8 @@ Some useful scripts and little programms
 ## C
 - One-printf-FizzBuzz :three: :five:
 	- A FizzBuzz in C, whith one only printf().<br />
+- Quinn 👩‍⚕️ 
+	- My first attempt to code a quine. Realy cool to do<br />
 
 ## JS
 - quote-generator :scroll:
