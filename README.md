@@ -1,5 +1,6 @@
 # some_little_progs :memo:
-Some useful scripts and little programms for my personal use
+
+Some useful scripts and little programms
 
 ## ASM
 - helloworld.asm :floppy_disk:
