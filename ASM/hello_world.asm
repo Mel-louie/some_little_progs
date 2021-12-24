@@ -1,7 +1,7 @@
 ; "Hello world!" in ASM 64 bits, Intel syntax
 ; assembling with nasm and linking:
 ; OSX:
-; nasm -f macho64 -o hello_world.o hello_world.asm && ld -macosx_version_min 10.6 -o hello_world -e main hello_world.o
+; nasm -f macho64 -o hello_world.o hello_world.asm && ld -macosx_version_min 11.6.0 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib  -lSystem -no_pie -o hello_world -e main hello_world.o
 ; Linux:
 ; nasm -f elf64 -o hello_world.o hello_world.asm && ld hello_world.o -o hello_world
 
