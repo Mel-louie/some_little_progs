@@ -1,0 +1,19 @@
+body
+{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+	Helvetica, Arial, "Lucida Grande", sans-serif;
+	background-color: #F4F5F5;
+
+}
+
+.articles1
+{
+	text-align: justify;
+	padding: 50px;
+}
+
+#menu
+{
+	overflow: hidden;
+	background-color: #E8F0E6;
+}

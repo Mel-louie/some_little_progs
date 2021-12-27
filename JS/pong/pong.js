@@ -14,9 +14,10 @@
 // a little pong, using p5.js library and the help of this tuto https://dev.to/codesphere/can-we-make-pong-in-less-than-a-100-lines-of-javascript-3ah1
 
 
-const screenDim = 500;											// dimentions of the play field
+const screenDimX = 750;											// dimentions of the play field
+const screenDimY = 500;											// dimentions of the play field
 let player1 = { x: 30, y: 250, width: 20, height: 100};			// players positions at the begining
-let player2 = { x: screenDim - 50, y: 70, width: 20, height: 100};
+let player2 = { x: screenDimX - 50, y: 70, width: 20, height: 100};
 let ball = {x: 250, y: 100, velocityX: 2, velocityY: 2};		// ball position at the begining
 
 let score = [0, 0];
@@ -30,35 +31,37 @@ K_S		= 83
 function setup()
 {
 	frameRate(100);
-	createCanvas(screenDim, screenDim);
+	createCanvas(screenDimX, screenDimY);
 }
 
 function draw()		// runs on loop according to framerate
 {
 	// draw field
-	fill("transparent");				// chose a color to fill rect below
-	rect(0, 0, screenDim, screenDim);
+	fill("black");				// chose a color to fill rect below
+	rect(0, 0, screenDimX, screenDimY);
 
+	fill("white")
+	rect(screenDimX / 2, 0, 2, screenDimX);
+	
 	//draw ball
-	fill("blue")
-	ellipse(ball.x, ball.y, 10, 10);
+	rect(ball.x, ball.y, 10, 10);
 
 	// draw paddles
-	fill("black");
+	//fill("black");
 	rect(player1.x, player1.y, player1.width, player1.height);
 	rect(player2.x, player2.y, player2.width, player2.height);
 	
 	// draw score
-	fill("black");
+	//fill("black");
 	textSize(23);
-	text(score[0] + " - " + score[1], screenDim / 2 - 20, 50);
+	text(score[0] + " - " + score[1], 30, 30);
 	
 	// ball collisions
 		// with top and bottom
-    if (ball.y > screenDim - 10 || ball.y < 10)
+    if (ball.y > screenDimY - 10 || ball.y < 10)
 		ball.velocityY *= -1;
 		// with players
-	if (ball.x < player1.x + player1.width + 10 && ball.y > player1.y && ball.y < player1.y + player1.height)
+	if (ball.x < player1.x + player1.width  && ball.y > player1.y && ball.y < player1.y + player1.height)
 	{
 		ball.velocityX *= -1.1; 		// invert and increase velocity by 10%
 		ball.velocityY = random(8) - 4;	// random y velocity between -4 and 4
@@ -73,13 +76,13 @@ function draw()		// runs on loop according to framerate
 	// move paddles player 1
 	if (keyIsDown(K_W) && player1.y > 1)
 		player1.y -= 5;
-	if (keyIsDown(K_S) && player1.y <= screenDim - player1.height)
+	if (keyIsDown(K_S) && player1.y <= screenDimY - player1.height)
 		player1.y += 5;
 
 	// move paddles player 2
 	if (keyIsDown(K_UP) && player2.y > 1)
 		player2.y -= 5;
-	if (keyIsDown(K_DOWN) && player2.y <= screenDim - player2.height)
+	if (keyIsDown(K_DOWN) && player2.y <= screenDimY - player2.height)
 		player2.y += 5;
 
 	// update score
@@ -89,7 +92,7 @@ function draw()		// runs on loop according to framerate
 		score[1] += 1;
 		ball = {x: 250, y: 100, velocityX: 2, velocityY: 2};
 	}
-	if (ball.x > screenDim)
+	if (ball.x > screenDimX)
 	{
 		score[0] += 1;
 		ball = {x: 250, y: 100, velocityX: -2, velocityY: 2};
