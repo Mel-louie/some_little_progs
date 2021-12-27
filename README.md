@@ -12,7 +12,7 @@ Some useful scripts and little programms
 - backup42cursusGit 🪝
 	- A script to automaticly git push my work when i'm at school (in case of wild error), with cron, every 30 minutes. Need to be an exe (<i>chmod a+x backup42cursusGit.sh</i>). Line in the crontab -e:
 	```
-	30 * * * * ~/some_little_progs/bash/backup42cursusGit.sh
+	*/30 * * * * ~/some_little_progs/bash/backup42cursusGit.sh
 	```
 
 ## C
