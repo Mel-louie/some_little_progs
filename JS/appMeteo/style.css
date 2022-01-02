@@ -1,0 +1,132 @@
+*, ::before, ::after
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+	Helvetica, Arial, "Lucida Grande", sans-serif;
+	background: #F4F5F5;
+	/* background: linear-gradient(45deg, rgb(59, 50, 50), rgb(22, 28, 29)); */
+	height: 100vh;
+}
+
+.container
+{
+	width: 800px;
+	height: 600px;
+	background: linear-gradient(45deg, #f7ba74, rgb(8, 88, 238));
+	display: grid;
+	grid-template: 100px 300px 100px 100px / repeat(8, 100px);
+	margin: 30px auto 0;
+	position: relative;
+	border: 1px solid #F4F5F5;
+}
+
+h1
+{
+	/* begin row / begin col / end row / end col */
+	grid-area: 1 / 1 / 2 / -1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #F4F5F5;
+	border-bottom: 1px solid #F4F5F5;
+}
+
+.block-logo-info
+{
+	grid-area: 2 / 1 / 3 / -1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #F4F5F5;
+	/* border-bottom: 1px solid #F4F5F5; */
+}
+
+.block-logo
+{
+	width: 50%;
+}
+
+.block-logo img
+{
+	width: 100%;
+	height: auto;
+}
+
+.block-info
+{
+	width: 50%;
+}
+
+.block-info .weather
+{
+	font-size: 30px;
+}
+
+.block-info .weather::first-letter
+{
+	text-transform: capitalize;
+}
+
+.block-info .temperature
+{
+	font-size: 50px;
+}
+
+.block-info .localisation
+{
+	font-size: 30px;
+	word-wrap: break-word;
+}
+
+.block-time-prevision
+{
+	grid-area: 3 / 1 / 4 / -1;
+}
+
+.block-day-prevision
+{
+	grid-area: 4 / 1 / 5 / -1;
+}
+
+.block-day-prevision, .block-time-prevision
+{
+	display: grid;
+	grid-template: 100px / repeat(7, 1fr);
+}
+
+.block-t, .block-d
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-top: 1px solid #F4F5F5;
+	font-size: 21px;
+}
+
+.block-t:not(:last-child), .block-d:not(:last-child)
+{
+	border-right: 1px solid #F4F5F5;
+}
+
+.block-t p, .block-d p
+{
+	margin: 5px;
+}
+
+/* Style the footer */
+.footer
+{
+	position: fixed;
+    height: 30px;
+    background-color: #E8F0E6;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
