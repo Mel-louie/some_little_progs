@@ -28,3 +28,7 @@ Some useful scripts and little programms
 	- Just a little classic pong, with the help of p5.js, a free and open source graphic library. Two players, W S and ↕️ to play.<br />
 - breakout 🕹️
 	- Breakout, use the mouse to play.<br />
+- meteo app ☀️
+	- An meteo app, with the help of this tutorial: https://github.com/Ziratsu/AppMeteoJavaScript
+	- API: https://openweathermap.org/
+	- improvement points: change svg; add humidity, pression, useful stuffs<br />

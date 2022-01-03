@@ -92,7 +92,7 @@ function mouseMove(e)
 {
 	// e.clientX = from left to the mouse
 	let posXBarCanvas = e.clientX - canvas.offsetLeft;
-	console.log(posXBarCanvas);
+	// console.log(posXBarCanvas);
 
 	if (posXBarCanvas > 35 && posXBarCanvas < canvas.width - 35)
 		barreX = posXBarCanvas - barWidth / 2;
