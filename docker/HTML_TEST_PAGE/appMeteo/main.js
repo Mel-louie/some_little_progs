@@ -1,4 +1,4 @@
-import arrDaysOrder from "./utility/timeManagement.js";
+import arrDaysOrder from "./scripts/utility/timeManagement.js";
 
 const APIKEY = "9955e1e11bb13be308fa1fe816b19557";
 const weather = document.querySelector(".weather");
