@@ -10,6 +10,12 @@ RUN			apk update && apk upgrade && apk add --no-cache	\
 RUN			rm -f /etc/nginx/nginx.conf
 COPY		./nginx.conf /etc/nginx/nginx.conf
 
+COPY ./appMeteo/*.html /usr/share/nginx/html/
+COPY ./appMeteo/*css /usr/share/nginx/html/
+COPY ./appMeteo/ressources/ /usr/share/nginx/html/
+COPY ./appMeteo/scripts/ /usr/share/nginx/html/
+
+
 RUN			mkdir /run/nginx &&	\
 			chown nginx:nginx /run/nginx
 
