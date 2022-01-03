@@ -10,5 +10,5 @@ COPY		./nginx.conf /etc/nginx/nginx.conf
 COPY ./appMeteo/*.html /usr/share/nginx/html/
 COPY ./appMeteo/*.css /usr/share/nginx/html/
 COPY ./appMeteo/*.js /usr/share/nginx/html/
-COPY ./appMeteo/ressources/ /usr/share/nginx/html/
-COPY ./appMeteo/scripts/ /usr/share/nginx/html/
+COPY ./appMeteo/ressources/ /usr/share/nginx/html/ressources/
+COPY ./appMeteo/scripts/ /usr/share/nginx/html/scripts
