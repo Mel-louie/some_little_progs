@@ -8,6 +8,7 @@ RUN			apk update && apk upgrade && apk add --no-cache	\
 											sudo
 
 RUN			rm -f /etc/nginx/nginx.conf
+RUN			rm -f //usr/share/nginx/html/index.html
 COPY		./nginx.conf /etc/nginx/nginx.conf
 
 COPY ./appMeteo/*.html /usr/share/nginx/html/
