@@ -21,7 +21,7 @@ ENV			CERTS_DIR=/etc/openssl					\
 			PHP_FPM_PORT=9000						\
 			TLS_VERSION=1.3
 
-RUN			chmod -R +x /setup_nginx.sh
+RUN			chmod -R +x ./setup_nginx.sh
 
 EXPOSE		443
 
