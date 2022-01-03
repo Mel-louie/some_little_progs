@@ -7,9 +7,9 @@ openssl req -newkey rsa:4096				\
 	-out ${CERT_PATH}		\
 	-keyout ${KEY_PATH}	\
 	-subj "/C=FR/CN=${DOMAIN_NAME}"
-sed -i "s~CERT_TEMPLATE~${CERT_PATH}~g" /etc/nginx.conf
-sed -i "s~KEY_TEMPLATE~${KEY_PATH}~g" /etc/nginx.conf
-sed -i "s/TLS_VERSION_TEMPLATE/${TLS_VERSION}/g" /etc/nginx.conf
-sed -i "s/SERVER_NAME_TEMPLATE/${DOMAIN_NAME}/g" /etc/nginx.conf
+sed -i "s~CERT_TEMPLATE~${CERT_PATH}~g" /etc/nginx/nginx.conf
+sed -i "s~KEY_TEMPLATE~${KEY_PATH}~g" /etc/nginx/nginx.conf
+sed -i "s/TLS_VERSION_TEMPLATE/${TLS_VERSION}/g" /etc/nginx/nginx.conf
+sed -i "s/SERVER_NAME_TEMPLATE/${DOMAIN_NAME}/g" /etc/nginx/nginx.conf
 
 nginx -g "daemon off;"

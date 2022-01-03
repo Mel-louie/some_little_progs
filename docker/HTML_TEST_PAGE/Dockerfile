@@ -7,10 +7,13 @@ RUN apk update && apk upgrade && apk add --no-cache \
     vim \
     sudo
 
-RUN rm -rf /etc/nginx.conf
+RUN rm -rf /etc/nginx/nginx.conf
 
 #configuration
-COPY ./nginx.conf /etc/nginx.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+RUN			mkdir /run/nginx &&	\
+			chown nginx:nginx /run/nginx
 
 # COPY ./*.html /usr/share/nginx/html/
 # COPY ./*.css /usr/share/nginx/html/
