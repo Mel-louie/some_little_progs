@@ -83,11 +83,11 @@ function callApi(long, lat)
 		// dynamic icone
 		if (actualHour >= 6 && actualHour < 21)
 		{
-			imgLogo.src = `ressources/jour/${resultApi.current.weather[0].icon}.svg`;
+			imgLogo.src = `ressources/${resultApi.current.weather[0].icon}.svg`;
 		}
 		else
 		{
-			imgLogo.src = `ressources/nuit/${resultApi.current.weather[0].icon}.svg`;
+			imgLogo.src = `ressources/${resultApi.current.weather[0].icon}.svg`;
 		}
 
 		loadingContainer.classList.add('disparition');
