@@ -30,6 +30,7 @@ ENV			CERTS_DIR=/etc/openssl					\
 
 COPY		./setup_nginx.sh /setup_nginx.sh
 RUN			chmod -R +x /setup_nginx.sh
+RUN			chmod -R +x /usr/share/nginx/html/
 
 EXPOSE		443
 
