@@ -8,7 +8,7 @@ RUN			apk update && apk upgrade && apk add --no-cache	\
 											sudo
 
 RUN			rm -f /etc/nginx/nginx.conf
-COPY		./nginx.conf /etc/nginx/nginx.conf
+COPY		./config/nginx.conf /etc/nginx/nginx.conf
 
 RUN			mkdir /run/nginx &&	\
 			chown nginx:nginx /run/nginx
@@ -21,7 +21,8 @@ ENV			CERTS_DIR=/etc/openssl					\
 			PHP_FPM_PORT=9000						\
 			TLS_VERSION=1.3
 
-RUN			chmod -R +x ./setup_nginx.sh
+COPY		./setup_nginx.sh /setup_nginx.sh
+RUN			chmod -R +x /setup_nginx.sh
 
 EXPOSE		443
 
