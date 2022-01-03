@@ -11,7 +11,5 @@ sed -i "s~CERT_TEMPLATE~${CERT_PATH}~g" /etc/nginx.conf
 sed -i "s~KEY_TEMPLATE~${KEY_PATH}~g" /etc/nginx.conf
 sed -i "s/TLS_VERSION_TEMPLATE/${TLS_VERSION}/g" /etc/nginx.conf
 sed -i "s/SERVER_NAME_TEMPLATE/${DOMAIN_NAME}/g" /etc/nginx.conf
-sed -i "s/PHP_FPM_HOST_TEMPLATE/${PHP_FPM_HOST}/g" /etc/nginx.conf
-sed -i "s/PHP_FPM_PORT_TEMPLATE/${PHP_FPM_PORT}/g" /etc/nginx.conf
 
 nginx -g "daemon off;"
