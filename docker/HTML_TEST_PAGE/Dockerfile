@@ -8,7 +8,7 @@ RUN			apk update && apk upgrade && apk add --no-cache	\
 											sudo
 
 RUN			rm -f /etc/nginx/nginx.conf
-COPY		./config/nginx.default.conf /etc/nginx/nginx.conf
+COPY		./nginx.conf /etc/nginx/nginx.conf
 
 RUN			mkdir /run/nginx &&	\
 			chown nginx:nginx /run/nginx
