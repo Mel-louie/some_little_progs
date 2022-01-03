@@ -1,3 +1,6 @@
+#  docker build . -t our-server
+#  docker run -it --rm -p 8080:80 our-server
+
 FROM nginx:1.15.8-alpine
 
 #config
