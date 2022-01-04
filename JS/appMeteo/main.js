@@ -1,10 +1,12 @@
-import arrDaysOrder from "./scripts/timeManagement.js";
+import arrDaysOrder from './scripts/timeManagement.js';
+import autoRefresh from "./scripts/autoRefresh.js";
 
 const APIKEY = "9955e1e11bb13be308fa1fe816b19557";
 const weather = document.querySelector(".weather");
 const temperature = document.querySelector(".temperature");
 const localisation = document.querySelector(".localisation");
 const feel = document.querySelector(".feel");
+const today = document.querySelector(".today");
 const hour = document.querySelectorAll(".time-name-prevision");
 const tempForHour = document.querySelectorAll('.time-prevision-value');
 const feelHour = document.querySelectorAll('.feel-like');
@@ -15,10 +17,15 @@ const loadingContainer = document.querySelector('.overlay-loading-icon');
 
 let resultApi;
 
+let day = new Date();
+let options = {weekday: 'long'};
+let actualDay = day.toLocaleDateString('fr-FR', options);
+
 if (navigator.geolocation)
 {
 	navigator.geolocation.getCurrentPosition(position =>
 	{
+		autoRefresh(1800000); // refresh every 30min (millisec)
 		// console.log(position);
 		let long = position.coords.longitude;
 		let lat = position.coords.latitude;
@@ -45,12 +52,21 @@ function callApi(long, lat)
 		temperature.innerText = `${Math.trunc(resultApi.current.temp)}ºC`
 		localisation.innerText = resultApi.timezone;
 		feel.innerText = `Ressenti ${Math.trunc(resultApi.current.feels_like)}ºC`;
-
+		
 		// houres by slices of 3, with their temp
 		let actualHour = new Date().getHours();
+		let actualMinutes = new Date().getMinutes();
+		let actualDate = new Date().toLocaleDateString('fr-FR');
+
+		if (actualMinutes < 10)
+			actualMinutes = `0${actualMinutes}`;
+		
+		today.innerText = `${actualDay} ${actualDate}, ${actualHour}h${actualMinutes}`;
+
+		let actualHourPlusThree = actualHour + 3;
 		for (let i = 0 ; i < hour.length ; i++)
 		{
-			let incHour = actualHour + i * 3;
+			let incHour = actualHourPlusThree + i * 3;
 
 			if (incHour > 24)
 				hour[i].innerText = `${incHour - 24}h`;

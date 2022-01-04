@@ -74,14 +74,29 @@ h1
 	text-transform: capitalize;
 }
 
+.block-info .today
+{
+	font-size: 15px;
+}
+
+.block-info .today::first-letter
+{
+	text-transform: capitalize;
+}
+
 .block-info .temperature
 {
-	font-size: 50px;
+	font-size: 45px;
+}
+
+.block-info .feel
+{
+	font-size: 15px;
 }
 
 .block-info .localisation
 {
-	font-size: 30px;
+	font-size: 25px;
 	word-wrap: break-word;
 }
 
