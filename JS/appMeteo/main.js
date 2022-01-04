@@ -36,7 +36,9 @@ function callApi(long, lat)
 		return answer.json();
 	})
 	.then((data) => {
-		// console.log(data);
+
+		console.log(data);
+
 		resultApi = data;
 
 		weather.innerText = resultApi.current.weather[0].description;
@@ -81,14 +83,7 @@ function callApi(long, lat)
 		}
 
 		// dynamic icone
-		if (actualHour >= 6 && actualHour < 21)
-		{
-			imgLogo.src = `ressources/${resultApi.current.weather[0].icon}.svg`;
-		}
-		else
-		{
-			imgLogo.src = `ressources/${resultApi.current.weather[0].icon}.svg`;
-		}
+		imgLogo.src = `ressources/${resultApi.current.weather[0].icon}.svg`;
 
 		loadingContainer.classList.add('disparition');
 	})
