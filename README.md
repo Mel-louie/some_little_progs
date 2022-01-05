@@ -35,4 +35,6 @@ Some useful scripts and little programms
 - meteo app ☀️
 	- An meteo app, with the help of this tutorial: https://github.com/Ziratsu/AppMeteoJavaScript
 	- API: https://openweathermap.org/
-	- improvement points: change svg; add humidity, pression, useful stuffs<br />
+	- improvement points: change svg; add humidity, pression, useful stuffs
+	https://vectorpaint.yaks.co.nz/
+	https://svgartista.net/<br />
