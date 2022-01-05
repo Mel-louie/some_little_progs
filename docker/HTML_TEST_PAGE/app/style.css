@@ -1,0 +1,75 @@
+*, ::before, ::after
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+	Helvetica, Arial, "Lucida Grande", sans-serif;
+	background: #F4F5F5;
+	color: rgb(4, 39, 104);
+	/* background: linear-gradient(45deg, rgb(59, 50, 50), rgb(22, 28, 29)); */
+}
+
+.container
+{
+	width: 90%;
+	min-width: 500px;
+	height: 400px;
+	background-color: #E8F0E6;
+	border-radius: 10px;
+	margin: 30px auto 50px;
+	position: relative;
+	display: grid;
+	grid-template: 20% 80%;
+}
+
+h1
+{
+	grid-area: 1 / 1 / 2 / -1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.timerDisplay
+{
+	position: relative;
+	width: 92%;
+	background: #ffffff;
+    padding: 40px 0;
+    font-family: monospace;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(4, 39, 104, 0.25);
+	margin: 20px auto 20px;
+}
+
+.instructions
+{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+}
+
+.times
+{
+    text-align: center;
+}
+
+/* Style the footer */
+.footer
+{
+	position: fixed;
+    height: 30px;
+    background-color: #E8F0E6;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
