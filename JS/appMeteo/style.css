@@ -20,6 +20,7 @@ body
 	height: 600px;
 	background: linear-gradient(45deg, #f7ba74, rgb(8, 88, 238));
 	display: grid;
+	/* x / y */
 	grid-template: 100px 300px 100px 100px / repeat(8, 100px);
 	margin: 30px auto 0;
 	position: relative;
