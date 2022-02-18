@@ -1,3 +1,6 @@
+# todo:
+a meal selector
+
 # some_little_progs :memo:
 
 Some useful scripts and little programms
